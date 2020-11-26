@@ -26,6 +26,8 @@ Dclient.on('message', async message => {
         if (!error) {
         message.channel.send('Tweet Sent!');
         console.log(tweet);
+        } else {
+          console.log(error);
         }
       });
    // }
