@@ -21,14 +21,14 @@ Dclient.on('message', async message => {
       return;
     }
     //if(message.channel.id === '780970919803224095'){
-    if (message.member.roles.cache.some(r => r.name === "Mod")){
+    // if (message.member.roles.cache.some(r => r.name === "Mod")){
     Tclient.post('statuses/update', {status: `${message.content}`}, function(error, tweet) {
         if (!error) {
         message.channel.send('Tweet Sent!');
         console.log(tweet);
         }
       });
-    }
+   // }
 //  }
 });
 
