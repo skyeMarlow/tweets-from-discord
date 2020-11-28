@@ -1,7 +1,6 @@
 let Twitter = require('twitter');
 let Discord = require('discord.js');
 const Dclient = new Discord.Client();
-const { Util } = require('discord.js')
 //Yeah so I want to have a designated channel for me and my mods.
 //If a mod types “hello” in he channel, a tweet will be created and sent saying “hello”
 
@@ -23,7 +22,7 @@ Dclient.on('message', async message => {
     }
     if(message.channel.id === '780970919803224095'){
     // if (message.member.roles.cache.some(r => r.name === "Mod")){
-    Tclient.post('statuses/update', {status: `${Util.cleanContent(message.content, message)}`}, function(error, tweet) {
+    Tclient.post('statuses/update', {status: `${message.cleanContent}`}, function(error, tweet) {
         if (!error) {
           message.react('👍');
           console.log(tweet);
