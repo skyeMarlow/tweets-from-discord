@@ -13,7 +13,7 @@ let Tclient = new Twitter({
   });
 
   Dclient.on('ready', () => {
-    console.log(`Logged in as ${Dclient.user.tag}!` + ' Lets go!!!!!!!!!!!!');
+    console.log(`Logged in as ${Dclient.user.tag}!` + ' Lets gooooooo!');
 });
 
 Dclient.on('message', async message => {
@@ -22,7 +22,7 @@ Dclient.on('message', async message => {
     }
     if(message.channel.id === '780970919803224095'){
     // if (message.member.roles.cache.some(r => r.name === "Mod")){
-    Tclient.post('statuses/update', {status: `${message.content}`}, function(error, tweet) {
+    Tclient.post('statuses/update', {status: `${message.content.toString()}`}, function(error, tweet) {
         if (!error) {
           message.react('👍');
           console.log(tweet);
